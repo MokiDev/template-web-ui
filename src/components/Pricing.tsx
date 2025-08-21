@@ -1,15 +1,11 @@
 'use client'
 
-import { Calendar } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { siteContent } from '@/data/siteContent'
 
 export default function Pricing () {
     const { subheading, plans } = siteContent.pricing
-
-    const scrollToContact = () => {
-        const element = document.getElementById('contact')
-        if (element) element.scrollIntoView({ behavior: 'smooth' })
-    }
+    const scheduleUrl = 'https://cal.com/thebayarea/1-hour-session'
 
     return (
         <section id="pricing" className="py-20 lg:py-32 bg-academic-dark-blue">
@@ -28,30 +24,36 @@ export default function Pricing () {
                     {plans.map(plan => (
                         <div
                             key={plan.id}
-                            className={`academic-card p-8 text-center academic-hover relative ${plan.popular ? 'border-2 border-academic-gold' : ''}`}
+                            className={`bg-white rounded-lg shadow-lg overflow-hidden border transform transition-all hover:shadow-xl ${plan.popular ? 'border-academic-gold scale-105 z-10' : 'border-academic-gold/20'}`}
                         >
                             {plan.popular && (
-                                <span className="absolute top-4 right-4 bg-academic-gold text-academic-navy text-xs font-semibold px-3 py-1 rounded-full">
+                                <div className="bg-academic-gold text-academic-navy text-center py-1 text-sm font-medium">
                                     Most Popular
-                                </span>
+                                </div>
                             )}
-                            <h3 className="text-xl font-bold text-white mb-4 title-font">{plan.name}</h3>
-                            <div className="text-4xl font-bold text-academic-gold mb-4">
-                                ${plan.price}
-                                <span className="text-lg text-gray-300">{plan.unit}</span>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-academic-navy mb-2 title-font">{plan.name}</h3>
+                                <div className="flex items-baseline mb-6">
+                                    <span className="text-4xl font-bold text-academic-navy">${plan.price}</span>
+                                    <span className="text-gray-600 ml-1">{plan.unit}</span>
+                                </div>
+                                <ul className="space-y-3 mb-8">
+                                    {plan.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-start">
+                                            <CheckCircle className="h-5 w-5 text-academic-gold mr-2 mt-0.5 flex-shrink-0" />
+                                            <span className="text-gray-700">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <a
+                                    href={scheduleUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 py-3 px-6 text-base bg-academic-gold hover:bg-academic-dark-gold text-white focus:ring-academic-gold w-full block text-center"
+                                >
+                                    {plan.cta}
+                                </a>
                             </div>
-                            <ul className="space-y-2 mb-6">
-                                {plan.features.map((feature, idx) => (
-                                    <li key={idx} className="text-gray-300 text-sm">{feature}</li>
-                                ))}
-                            </ul>
-                            <button
-                                onClick={scrollToContact}
-                                className="academic-button w-full px-4 py-3 font-semibold rounded-md flex items-center justify-center space-x-2"
-                            >
-                                <Calendar className="w-4 h-4" />
-                                <span>{plan.cta}</span>
-                            </button>
                         </div>
                     ))}
                 </div>
