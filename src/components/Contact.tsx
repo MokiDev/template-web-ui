@@ -16,7 +16,7 @@ export default function Contact () {
     const getCalLink = () => {
         return scheduleType === 'consultation'
             ? 'https://cal.com/thebayareatutor/free-consultation?embed=1'
-            : 'https://cal.com/thebayareatutor/tutoring-session?embed=1'
+            : 'https://cal.com/thebayarea/1-hour-session?embed=1'
     }
 
     return (
@@ -38,7 +38,8 @@ export default function Contact () {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Contact Information */}
-                        <div className="space-y-8">
+                        <div className={`space-y-8 ${scheduleType ? 'hidden' : ''}`}
+                        >
                             <div className="academic-card p-8">
                                 <h3 className="text-2xl font-bold text-white mb-6 title-font">Contact Information</h3>
 
@@ -107,7 +108,8 @@ export default function Contact () {
                         </div>
 
                         {/* Scheduling Section */}
-                        <div className="academic-card p-8">
+                        <div className={`academic-card p-8 ${scheduleType ? 'lg:col-span-2' : ''}`}
+                        >
                             {!scheduleType && (
                                 <div className="text-center">
                                     <p className="text-gray-300 mb-8">
@@ -137,7 +139,7 @@ export default function Contact () {
                                 <div className="space-y-4">
                                     <iframe
                                         src={getCalLink()}
-                                        className="w-full h-[700px] border-none rounded-md"
+                                        className="w-full h-[80vh] min-h-[700px] border-none rounded-md"
                                     ></iframe>
                                     <button
                                         onClick={() => setScheduleType(null)}
