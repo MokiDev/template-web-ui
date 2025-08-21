@@ -49,7 +49,7 @@ export default function RootLayout ({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className="scroll-smooth">
+        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
         <head>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -80,7 +80,7 @@ export default function RootLayout ({
                 }}
             />
         </head>
-        <body className="bg-academic-navy text-white antialiased">
+        <body className="bg-white text-academic-navy dark:bg-academic-navy dark:text-white antialiased">
         <CalProvider>
             {children}
         </CalProvider>

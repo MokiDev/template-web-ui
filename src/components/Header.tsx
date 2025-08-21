@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Calendar } from 'lucide-react'
 import { useCal } from './CalProvider'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header () {
     const [ isScrolled, setIsScrolled ] = useState(false)
@@ -72,22 +73,23 @@ export default function Header () {
                         <div className="hidden lg:flex items-center space-x-8">
                             <button
                                 onClick={() => scrollToSection('services')}
-                                className="text-white hover:text-academic-gold transition-colors font-medium"
+                                className="text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium"
                             >
                                 Services
                             </button>
                             <button
                                 onClick={() => scrollToSection('about')}
-                                className="text-white hover:text-academic-gold transition-colors font-medium"
+                                className="text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium"
                             >
                                 About
                             </button>
                             <button
                                 onClick={() => scrollToSection('faq')}
-                                className="text-white hover:text-academic-gold transition-colors font-medium"
+                                className="text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium"
                             >
                                 FAQ
                             </button>
+                            <ThemeToggle />
                             <button
                                 onClick={handleScheduleClick}
                                 className="schedule-trigger academic-button px-6 py-2 text-sm font-semibold rounded-md flex items-center space-x-2"
@@ -98,32 +100,35 @@ export default function Header () {
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden text-white p-2"
-                        >
-                            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
+                        <div className="flex items-center space-x-2">
+                            <ThemeToggle />
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="lg:hidden text-academic-navy dark:text-white p-2"
+                            >
+                                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            </button>
+                        </div>
                     </div>
 
                     {/* Mobile Navigation */}
                     {isMobileMenuOpen && (
-                        <div className="lg:hidden bg-academic-dark-blue/95 backdrop-blur-md rounded-lg mt-2 p-4 space-y-4">
+                        <div className="lg:hidden bg-white dark:bg-academic-dark-blue/95 backdrop-blur-md rounded-lg mt-2 p-4 space-y-4">
                             <button
                                 onClick={() => scrollToSection('services')}
-                                className="block w-full text-left text-white hover:text-academic-gold transition-colors font-medium py-2"
+                                className="block w-full text-left text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium py-2"
                             >
                                 Services
                             </button>
                             <button
                                 onClick={() => scrollToSection('about')}
-                                className="block w-full text-left text-white hover:text-academic-gold transition-colors font-medium py-2"
+                                className="block w-full text-left text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium py-2"
                             >
                                 About
                             </button>
                             <button
                                 onClick={() => scrollToSection('faq')}
-                                className="block w-full text-left text-white hover:text-academic-gold transition-colors font-medium py-2"
+                                className="block w-full text-left text-academic-navy dark:text-white hover:text-academic-gold transition-colors font-medium py-2"
                             >
                                 FAQ
                             </button>
