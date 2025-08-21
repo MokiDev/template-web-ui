@@ -142,7 +142,7 @@ export default function Services () {
                             className={`academic-card p-8 text-center academic-hover relative ${location.popular ? 'border-2 border-academic-gold' : ''}`}
                         >
                             {location.popular && (
-                                <span className="absolute top-4 right-4 bg-academic-gold text-academic-navy text-xs font-semibold px-3 py-1 rounded-full">
+                                <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold text-academic-gold border border-academic-gold rounded-full bg-academic-navy/80 backdrop-blur">
                                     Most Popular
                                 </span>
                             )}

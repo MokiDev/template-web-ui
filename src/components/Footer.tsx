@@ -1,11 +1,14 @@
 'use client'
 
 import { Phone, Mail, GraduationCap, ArrowUp, MapPin, Calendar } from 'lucide-react'
+import { useScheduleModal } from '@/components/ScheduleModal'
 
 export default function Footer () {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
+
+    const { open: openSchedule } = useScheduleModal()
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId)
@@ -79,7 +82,8 @@ export default function Footer () {
                             </li>
                             <li>
                                 <button
-                                    onClick={() => scrollToSection('contact')}
+                                    data-schedule-trigger
+                                    onClick={openSchedule}
                                     className="text-gray-400 hover:text-academic-gold transition-colors text-sm"
                                 >
                                     Free Consultation
@@ -110,7 +114,8 @@ export default function Footer () {
                         </div>
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <button
-                                onClick={() => scrollToSection('contact')}
+                                data-schedule-trigger
+                                onClick={openSchedule}
                                 className="academic-button px-6 py-3 font-semibold rounded-lg flex items-center space-x-2"
                             >
                                 <Calendar className="w-4 h-4" />

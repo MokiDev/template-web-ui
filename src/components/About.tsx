@@ -2,6 +2,7 @@
 
 import { GraduationCap, Award, Users, TrendingUp, Clock, Target, School, MapPin } from 'lucide-react'
 import { siteContent } from '@/data/siteContent'
+import { useScheduleModal } from '@/components/ScheduleModal'
 
 // Teaching Philosophy SVG Icon
 const TeachingIcon = () => (
@@ -19,6 +20,7 @@ const ExperienceIcon = () => (
 
 export default function About () {
     const expertise = siteContent.about.expertise
+    const { open: openSchedule } = useScheduleModal()
 
     const achievements = [
         { icon: <GraduationCap className="w-6 h-6" />, stat: "UC Berkeley", label: "Graduate" },
@@ -170,10 +172,8 @@ export default function About () {
                                 You get the best tutoring support in the Bay Area. Let's discuss your goals and create a plan for your academic success.
                             </p>
                             <button
-                                onClick={() => {
-                                    const element = document.getElementById('contact')
-                                    if (element) element.scrollIntoView({ behavior: 'smooth' })
-                                }}
+                                data-schedule-trigger
+                                onClick={openSchedule}
                                 className="academic-button px-8 py-3 text-lg font-semibold rounded-lg"
                             >
                                 Schedule Your Free Consultation

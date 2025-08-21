@@ -2,14 +2,11 @@
 
 import { Calendar } from 'lucide-react'
 import { siteContent } from '@/data/siteContent'
+import { useScheduleModal } from '@/components/ScheduleModal'
 
 export default function Pricing () {
     const { subheading, plans } = siteContent.pricing
-
-    const scrollToContact = () => {
-        const element = document.getElementById('contact')
-        if (element) element.scrollIntoView({ behavior: 'smooth' })
-    }
+    const { open: openSchedule } = useScheduleModal()
 
     return (
         <section id="pricing" className="py-20 lg:py-32 bg-academic-dark-blue">
@@ -28,10 +25,10 @@ export default function Pricing () {
                     {plans.map(plan => (
                         <div
                             key={plan.id}
-                            className={`academic-card p-8 text-center academic-hover relative ${plan.popular ? 'border-2 border-academic-gold' : ''}`}
+                            className={`academic-card p-8 text-center academic-hover relative flex flex-col h-full ${plan.popular ? 'border-2 border-academic-gold' : ''}`}
                         >
                             {plan.popular && (
-                                <span className="absolute top-4 right-4 bg-academic-gold text-academic-navy text-xs font-semibold px-3 py-1 rounded-full">
+                                <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold text-academic-gold border border-academic-gold rounded-full bg-academic-navy/80 backdrop-blur">
                                     Most Popular
                                 </span>
                             )}
@@ -40,14 +37,18 @@ export default function Pricing () {
                                 ${plan.price}
                                 <span className="text-lg text-gray-300">{plan.unit}</span>
                             </div>
-                            <ul className="space-y-2 mb-6">
+                            <ul className="space-y-2 mb-6 text-left flex-grow">
                                 {plan.features.map((feature, idx) => (
-                                    <li key={idx} className="text-gray-300 text-sm">{feature}</li>
+                                    <li key={idx} className="flex items-start text-gray-300 text-sm">
+                                        <div className="w-2 h-2 bg-academic-gold rounded-full mr-3 mt-1 flex-shrink-0"></div>
+                                        <span>{feature}</span>
+                                    </li>
                                 ))}
                             </ul>
                             <button
-                                onClick={scrollToContact}
-                                className="academic-button w-full px-4 py-3 font-semibold rounded-md flex items-center justify-center space-x-2"
+                                data-schedule-trigger
+                                onClick={openSchedule}
+                                className="mt-auto academic-button w-full px-4 py-3 font-semibold rounded-md flex items-center justify-center space-x-2"
                             >
                                 <Calendar className="w-4 h-4" />
                                 <span>{plan.cta}</span>

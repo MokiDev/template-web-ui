@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, Star, MapPin, GraduationCap } from 'lucide-react'
+import { useScheduleModal } from '@/components/ScheduleModal'
 
 // Academic Achievement SVG Icon
 const AcademicIcon = () => (
@@ -10,12 +11,7 @@ const AcademicIcon = () => (
 )
 
 export default function Hero () {
-    const scrollToContact = () => {
-        const element = document.getElementById('contact')
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
+    const { open: openSchedule } = useScheduleModal()
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -61,7 +57,8 @@ export default function Hero () {
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up delay-400">
                         <button
-                            onClick={scrollToContact}
+                            data-schedule-trigger
+                            onClick={openSchedule}
                             className="academic-button px-8 py-4 text-lg font-semibold rounded-lg flex items-center space-x-2 w-full sm:w-auto"
                         >
                             <span>Schedule Free Consultation</span>

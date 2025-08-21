@@ -13,7 +13,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
       transition-all hover:shadow-xl
     `}>
             {plan.popular && (
-                <div className="bg-yellow-600 text-white text-center py-1 text-sm font-medium">
+                <div className="text-center py-1 text-sm font-medium text-yellow-600 border border-yellow-600">
                     Most Popular
                 </div>
             )}

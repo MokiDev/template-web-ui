@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X, Calendar } from 'lucide-react'
+import { useScheduleModal } from '@/components/ScheduleModal'
 
 export default function Header () {
     const [ isScrolled, setIsScrolled ] = useState(false)
     const [ isMobileMenuOpen, setIsMobileMenuOpen ] = useState(false)
+    const [ showFloating, setShowFloating ] = useState(true)
+    const { open: openSchedule } = useScheduleModal()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,8 +27,20 @@ export default function Header () {
         }
     }
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            const visible = entries.some(entry => entry.isIntersecting)
+            setShowFloating(!visible)
+        })
+        const buttons = document.querySelectorAll('[data-schedule-trigger]:not(.floating)')
+        buttons.forEach(btn => observer.observe(btn))
+        return () => {
+            buttons.forEach(btn => observer.unobserve(btn))
+        }
+    }, [isMobileMenuOpen])
+
     const handleScheduleClick = () => {
-        scrollToSection('contact')
+        openSchedule()
     }
 
     return (
@@ -67,6 +82,7 @@ export default function Header () {
                                 FAQ
                             </button>
                             <button
+                                data-schedule-trigger
                                 onClick={handleScheduleClick}
                                 className="academic-button px-6 py-2 text-sm font-semibold rounded-md flex items-center space-x-2"
                             >
@@ -106,6 +122,7 @@ export default function Header () {
                                 FAQ
                             </button>
                             <button
+                                data-schedule-trigger
                                 onClick={handleScheduleClick}
                                 className="academic-button w-full px-4 py-2 text-sm font-semibold rounded-md flex items-center justify-center space-x-2"
                             >
@@ -118,13 +135,16 @@ export default function Header () {
             </header>
 
             {/* Floating Schedule Button */}
-            <button
-                onClick={handleScheduleClick}
-                className="schedule-button academic-button px-4 py-3 rounded-full flex items-center justify-center space-x-2 animate-academic-glow"
-            >
-                <Calendar className="w-5 h-5" />
-                <span className="font-semibold">Schedule Now</span>
-            </button>
+            {showFloating && (
+                <button
+                    data-schedule-trigger
+                    onClick={handleScheduleClick}
+                    className="floating schedule-button academic-button px-4 py-3 rounded-full flex items-center justify-center space-x-2 animate-academic-glow"
+                >
+                    <Calendar className="w-5 h-5" />
+                    <span className="font-semibold">Schedule Now</span>
+                </button>
+            )}
         </>
     )
 }
