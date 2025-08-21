@@ -1,6 +1,7 @@
 'use client'
+/* eslint-disable @next/next/no-img-element */
 
-import { ArrowRight, Star, MapPin, GraduationCap } from 'lucide-react'
+import { ArrowRight, MapPin } from 'lucide-react'
 import { useCal } from './CalProvider'
 
 // Academic Achievement SVG Icon
@@ -10,14 +11,53 @@ const AcademicIcon = () => (
     </svg>
 )
 
+const schoolLogos = [
+    {
+        src: 'https://www.acalanes.k12.ca.us/cms/lib/CA01001364/Centricity/Template/GlobalAssets/images/Logos/Acalanes_A.png',
+        alt: 'Acalanes High School logo',
+        name: 'Acalanes High School',
+        phone: '925-280-3970'
+    },
+    {
+        src: 'https://www.acalanes.k12.ca.us/cms/lib/CA01001364/Centricity/Template/GlobalAssets/images/Logos/BlockC.png',
+        alt: 'Campolindo High School logo',
+        name: 'Campolindo High School',
+        phone: '925-280-3950'
+    },
+    {
+        src: '/las-lomas.svg',
+        alt: 'Las Lomas High School logo',
+        name: 'Las Lomas High School',
+        phone: '925-280-3920'
+    },
+    {
+        src: 'https://www.acalanes.k12.ca.us/cms/lib/CA01001364/Centricity/Template/GlobalAssets/images/Logos/2020%20Block%20M.jpg',
+        alt: 'Miramonte High School logo',
+        name: 'Miramonte High School',
+        phone: '925-280-3930'
+    },
+    {
+        src: '/carondelet.svg',
+        alt: 'Carondelet High School logo',
+        name: 'Carondelet High School',
+        phone: '925-686-5353'
+    },
+    {
+        src: 'https://resources.finalsite.net/images/v1689581096/delasallehigh/ruhsaayrud0sfww3csrt/header-logo.svg',
+        alt: 'De La Salle High School logo',
+        name: 'De La Salle High School',
+        phone: '925-288-8100'
+    }
+]
+
 export default function Hero () {
     const { open } = useCal()
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background dark:bg-academic-navy">
             {/* Academic-style gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-academic-navy via-academic-dark-blue to-academic-navy">
-                <div className="absolute inset-0 bg-gradient-to-r from-academic-gold/10 via-transparent to-academic-gold/5"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-academic-off-white via-academic-light-blue/20 to-academic-off-white dark:from-academic-navy dark:via-academic-dark-blue dark:to-academic-navy">
+                <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-academic-gold/10 dark:via-transparent dark:to-academic-gold/5"></div>
             </div>
 
             {/* Subtle background elements */}
@@ -33,25 +73,25 @@ export default function Hero () {
                     {/* Badge */}
                     <div className="inline-flex items-center space-x-2 bg-academic-gold/20 backdrop-blur-sm border border-academic-gold/30 rounded-full px-4 py-2 mb-8 animate-fade-in">
                         <AcademicIcon />
-                        <span className="text-sm font-medium text-white">UC Berkeley Graduate • 15+ Years Experience</span>
+                        <span className="text-sm font-medium text-foreground dark:text-white">UC Berkeley Graduate • 15+ Years Experience</span>
                     </div>
 
                     {/* Main Heading */}
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 animate-slide-up title-font">
-                        <span className="block text-white leading-tight">Bay Area's</span>
-                        <span className="block text-gradient leading-tight">Premier Tutor</span>
+                        <span className="block text-foreground dark:text-white leading-tight">Your Local</span>
+                        <span className="block text-academic-gold dark:text-gradient leading-tight">Bay Area Premier Tutor</span>
                     </h1>
 
                     {/* Subheading */}
-                    <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto animate-slide-up delay-200 leading-relaxed">
-                        You deserve the best academic support. I provide expert tutoring for SAT, ACT, SAT Subject Tests,
+                    <p className="text-lg sm:text-xl lg:text-2xl text-academic-medium-blue dark:text-academic-off-white mb-8 max-w-4xl mx-auto animate-slide-up delay-200 leading-relaxed">
+                        Offering the best academic support. Providing expert tutoring for SAT, ACT, SAT Subject Tests,
                         and comprehensive school support. Familiar with Bay Area curricula and teachers.
                     </p>
 
                     {/* Location Badge */}
-                    <div className="inline-flex items-center space-x-2 bg-academic-medium-blue/50 backdrop-blur-sm border border-academic-gold/20 rounded-full px-4 py-2 mb-8 animate-slide-up delay-300">
+                    <div className="inline-flex items-center space-x-2 bg-blue-100 dark:bg-academic-medium-blue/50 backdrop-blur-sm border border-academic-gold/20 rounded-full px-4 py-2 mb-8 animate-slide-up delay-300">
                         <MapPin className="w-4 h-4 text-academic-gold" />
-                        <span className="text-sm text-white">In-Person* & Online • Bay Area Libraries & Your Home</span>
+                        <span className="text-sm text-foreground dark:text-white">In-Person* & Online • Bay Area Libraries & Your Home</span>
                     </div>
 
                     {/* CTA Buttons */}
@@ -68,31 +108,35 @@ export default function Hero () {
                                 const element = document.getElementById('services')
                                 if (element) element.scrollIntoView({ behavior: 'smooth' })
                             }}
-                            className="px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/20 hover:border-academic-gold/50 text-white hover:bg-academic-gold/10 transition-all duration-300 w-full sm:w-auto"
+                            className="px-8 py-4 text-lg font-semibold rounded-lg border-2 border-academic-navy/20 dark:border-white/20 text-foreground dark:text-white hover:border-academic-gold/50 hover:bg-academic-gold/10 transition-all duration-300 w-full sm:w-auto"
                         >
                             View Services
                         </button>
                     </div>
 
-                    {/* Key Stats */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto animate-slide-up delay-500">
-                        <div className="text-center">
-                            <div className="text-2xl sm:text-3xl font-bold text-academic-gold mb-1 title-font">15+</div>
-                            <div className="text-sm text-gray-400">Years Experience</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-2xl sm:text-3xl font-bold text-academic-gold mb-1 title-font">All</div>
-                            <div className="text-sm text-gray-400">Test Types</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-2xl sm:text-3xl font-bold text-academic-gold mb-1 title-font">Local</div>
-                            <div className="text-sm text-gray-400">Schools Known</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-2xl sm:text-3xl font-bold text-academic-gold mb-1 title-font">Care</div>
-                            <div className="text-sm text-gray-400">& Attention</div>
+                    {/* School Logos */}
+                    <div className="mt-12 animate-slide-up delay-500">
+                        <p className="text-sm text-gray-400 mb-4">
+                            Trusted by families from these East Bay schools:
+                        </p>
+                        <div className="relative overflow-hidden bg-gray-100/10 rounded-xl py-8">
+                            <div className="flex items-center gap-16 animate-logo-scroll">
+                                {[ ...schoolLogos, ...schoolLogos ].map((logo, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        className="h-24 w-auto flex-shrink-0"
+                                        data-name={logo.name}
+                                        data-phone={logo.phone}
+                                    />
+                                ))}
+                            </div>
+                            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-100/10 to-transparent"></div>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-100/10 to-transparent"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
