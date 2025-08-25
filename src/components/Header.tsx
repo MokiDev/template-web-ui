@@ -154,15 +154,14 @@ export default function Header () {
 
             {/* Floating Schedule Button */}
             {showFloating && (
-                <a
-                    href="https://cal.com/thebayarea"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={handleScheduleClick}
+                    data-action="schedule_now"
                     className="schedule-button academic-button px-4 py-3 rounded-full flex items-center justify-center space-x-2 animate-academic-glow"
                 >
                     <Calendar className="w-5 h-5" />
                     <span className="font-semibold">Schedule Now</span>
-                </a>
+                </button>
             )}
         </>
     )
