@@ -23,6 +23,7 @@ export function initPostHog () {
             autocapture: true,
             disable_session_recording: false,
             session_recording: {
+                enabled: true,
                 maskAllInputs: false,
             },
             debug: !isProd,
