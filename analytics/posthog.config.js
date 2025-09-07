@@ -21,6 +21,7 @@ export function initPostHog () {
             api_host: POSTHOG_HOST,
             capture_pageview: true,
             autocapture: true,
+            disable_session_recording: false,
             session_recording: {
                 enabled: true,
                 maskAllInputs: false,
