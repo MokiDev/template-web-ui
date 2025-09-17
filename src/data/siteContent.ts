@@ -102,8 +102,39 @@ export const siteContent: SiteContent = {
                     "Preparation for college-level mathematics"
                 ]
             }
-        
+
         ],
+    },
+    testimonials: {
+        heading: "Families See the Difference",
+        subheading: "Hear from parents and students who have experienced measurable improvements",
+        items: [
+            {
+                name: "Sarah L.",
+                role: "Parent of 11th Grader",
+                quote: "Within a semester, my son's confidence in calculus skyrocketed. He went from struggling to maintaining a solid A and now actually enjoys the subject."
+            },
+            {
+                name: "Ethan R.",
+                role: "AP Physics Student",
+                quote: "The focused test prep and weekly feedback helped me earn a 5 on the AP Physics exam. The strategies we practiced made the test feel manageable."
+            },
+            {
+                name: "Priya K.",
+                role: "Parent of 9th Grader",
+                quote: "We saw noticeable improvements after just a few sessions. Assignments were completed on time, and the stress around math homework disappeared."
+            },
+            {
+                name: "Lucas A.",
+                role: "SAT Test Taker",
+                quote: "I improved my SAT Math score by over 150 points. The personalized practice sets and review sessions were exactly what I needed."
+            },
+            {
+                name: "Angela M.",
+                role: "Parent of 12th Grader",
+                quote: "Amir's mentorship extended beyond academics. He kept our daughter motivated through college application season and helped her stay on track with AP coursework."
+            }
+        ]
     },
     locations: {
         heading: "Tutoring Locations",
