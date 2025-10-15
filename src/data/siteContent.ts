@@ -15,8 +15,8 @@ export const siteContent: SiteContent = {
         acceptanceRate: 87 // % of students accepted to target schools
     },
     about: {
-        heading: "Your Child's Success is My Priority",
-        bio: "I'm a UC Berkeley graduate with over 15 years of experience tutoring students in mathematics and physics. My approach focuses on building strong foundations while developing critical thinking skills that extend beyond the classroom.",
+        heading: "Meet the Tutor Behind the Results",
+        bio: "Hi, I'm Amir—a UC Berkeley bioengineering graduate and lifelong tutor who grew up surrounded by siblings and cousins who trusted me to make school make sense. That early love of teaching carried me from community college learning centers in Florida to California before I ultimately settled in the Bay Area. For more than a decade, I've partnered with local tutoring centers and families to deliver upbeat, practical coaching that helps students feel seen, prepared, and proud of their progress.",
         expertise: [
             "Algebra & Geometry",
             "Trigonometry",
@@ -29,23 +29,23 @@ export const siteContent: SiteContent = {
         ],
         approach: {
             heading: "My Teaching Approach",
-            description: "I believe that every student has unique learning needs. My tutoring philosophy centers around:",
+            description: "Years of tutoring in community colleges, Bay Area learning centers, and family homes taught me that every breakthrough starts with trust, curiosity, and a genuine partnership between coach and student.",
             points: [
                 {
-                    title: "Building Strong Foundations",
-                    description: "Ensuring students thoroughly understand core concepts before advancing to more complex topics."
+                    title: "Diagnose & Align",
+                    description: "I listen first, learn your classroom expectations, and set clear goals that make sense for the student and family."
                 },
                 {
-                    title: "Developing Problem-Solving Skills",
-                    description: "Teaching strategies to approach new problems independently and with confidence."
+                    title: "Rebuild Foundations",
+                    description: "We identify gaps and rebuild understanding layer by layer so advanced topics feel approachable."
                 },
                 {
-                    title: "Customized Learning Plans",
-                    description: "Creating personalized study plans based on individual strengths, weaknesses, and goals."
+                    title: "Make Learning Engaging",
+                    description: "Sessions are collaborative, upbeat, and tailored to each student's learning style."
                 },
                 {
-                    title: "Regular Progress Assessment",
-                    description: "Continuous evaluation to ensure improvement and adjust strategies as needed."
+                    title: "Celebrate Growth",
+                    description: "We track wins, refine strategies, and keep momentum going all semester long."
                 }
             ]
         }
