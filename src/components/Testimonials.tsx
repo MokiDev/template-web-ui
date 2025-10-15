@@ -61,7 +61,7 @@ export default function Testimonials () {
                                 {currentTestimonial.role}
                             </p>
                         </div>
-                        <div className="mt-10 flex items-center justify-between">
+                        <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
                             <button
                                 type="button"
                                 onClick={handlePrevious}
@@ -70,16 +70,18 @@ export default function Testimonials () {
                             >
                                 <ChevronLeft className="h-6 w-6" />
                             </button>
-                            <div className="flex items-center space-x-2">
-                                {items.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        type="button"
-                                        onClick={() => setCurrentIndex(index)}
-                                        className={`h-2.5 w-8 rounded-full transition-all ${index === currentIndex ? 'bg-academic-gold' : 'bg-academic-gold/30'}`}
-                                        aria-label={`Show testimonial ${index + 1}`}
-                                    />
-                                ))}
+                            <div className="flex-1 flex justify-center">
+                                <div className="flex w-full max-w-xs sm:max-w-sm flex-wrap items-center justify-center gap-2">
+                                    {items.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            type="button"
+                                            onClick={() => setCurrentIndex(index)}
+                                            className={`h-2.5 w-3 sm:w-4 rounded-full transition-all ${index === currentIndex ? 'bg-academic-gold' : 'bg-academic-gold/30'}`}
+                                            aria-label={`Show testimonial ${index + 1}`}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                             <button
                                 type="button"
