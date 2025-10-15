@@ -23,6 +23,7 @@ export default function CalModal ({ url, onClose }: CalModalProps) {
           src={url}
           className="w-full h-full border-0"
           title="Schedule"
+          allowTransparency
         />
       </div>
     </div>
