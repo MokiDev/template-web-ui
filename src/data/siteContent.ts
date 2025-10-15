@@ -110,29 +110,139 @@ export const siteContent: SiteContent = {
         subheading: "Hear from parents and students who have experienced measurable improvements",
         items: [
             {
-                name: "Sarah L.",
-                role: "Parent of 11th Grader",
-                quote: "Within a semester, my son's confidence in calculus skyrocketed. He went from struggling to maintaining a solid A and now actually enjoys the subject."
+                name: "Logan F.",
+                role: "AP Calculus AB & Physics Student",
+                quote: "Amir made Calc AB and Physics enjoyable. Sessions flew by and built my confidence fast."
             },
             {
-                name: "Ethan R.",
-                role: "AP Physics Student",
-                quote: "The focused test prep and weekly feedback helped me earn a 5 on the AP Physics exam. The strategies we practiced made the test feel manageable."
+                name: "Connor J.",
+                role: "AP Calculus BC & Physics Student",
+                quote: "Amir’s guidance helped me excel in Calc BC and Physics. Excited for another year working together."
             },
             {
-                name: "Priya K.",
-                role: "Parent of 9th Grader",
-                quote: "We saw noticeable improvements after just a few sessions. Assignments were completed on time, and the stress around math homework disappeared."
+                name: "Diego R.",
+                role: "Precalculus, Calculus AB, and Honors Physics Student",
+                quote: "From Precalc to Physics, Amir made learning fun. I’ll truly miss his teaching."
             },
             {
-                name: "Lucas A.",
-                role: "SAT Test Taker",
-                quote: "I improved my SAT Math score by over 150 points. The personalized practice sets and review sessions were exactly what I needed."
+                name: "Milan T.",
+                role: "Former Student",
+                quote: "Amir pushed me to do my best. The sessions were always engaging and motivating."
             },
             {
-                name: "Angela M.",
-                role: "Parent of 12th Grader",
-                quote: "Amir's mentorship extended beyond academics. He kept our daughter motivated through college application season and helped her stay on track with AP coursework."
+                name: "Clara K.",
+                role: "Former Student",
+                quote: "Our discussions challenged me to think deeper. Amir’s sessions brightened my day."
+            },
+            {
+                name: "Harper N.",
+                role: "Former Student",
+                quote: "Amir made math fun and meaningful all through high school. I couldn’t be more grateful."
+            },
+            {
+                name: "Noel P.",
+                role: "Math & Physics Student",
+                quote: "Amir helped me pass both math and physics when I thought it was impossible."
+            },
+            {
+                name: "Tessa L.",
+                role: "Calculus & Physics Student",
+                quote: "Amir turned calculus into something I looked forward to. His support carried me into physics."
+            },
+            {
+                name: "Kian D.",
+                role: "Honors Precalculus Student",
+                quote: "Amir’s humor and energy made every HPC session exciting. I can’t wait for next year."
+            },
+            {
+                name: "Miles O.",
+                role: "Physics Student",
+                quote: "Amir saved my physics grade and gave me confidence throughout the year."
+            },
+            {
+                name: "Leila V.",
+                role: "Physics Student",
+                quote: "Without Amir I would’ve failed physics. I’ll miss the jokes and encouragement."
+            },
+            {
+                name: "Theo M.",
+                role: "Former Student",
+                quote: "Amir was the physics teacher we all wished we had."
+            },
+            {
+                name: "Jaden C.",
+                role: "Physics & Algebra II Student",
+                quote: "Amir stood by me through physics and algebra. I’ll always value the support and memories."
+            },
+            {
+                name: "Hannah W.",
+                role: "Former Student",
+                quote: "Amir’s guidance gave me the clarity I needed to succeed."
+            },
+            {
+                name: "Maya E.",
+                role: "Calculus Student",
+                quote: "Amir helped me through math this year and I’ll rely on him for Calc next year."
+            },
+            {
+                name: "Sophie T.",
+                role: "Honors Precalculus Student",
+                quote: "Amir guided us through Precalc with patience and humor. Excited for Calc next year."
+            },
+            {
+                name: "Ava Z.",
+                role: "Physics Student",
+                quote: "Physics wasn’t my favorite, but Amir made it manageable and even a little fun."
+            },
+            {
+                name: "Ellie H.",
+                role: "Honors Precalculus & Physics Student",
+                quote: "Amir made HPC and Physics a highlight of my junior year. His wit kept learning fun."
+            },
+            {
+                name: "Zoe N.",
+                role: "Former Student",
+                quote: "Amir explained concepts better than my teachers and kept lessons lighthearted."
+            },
+            {
+                name: "Julia K.",
+                role: "Calculus & Physics Student",
+                quote: "Thanks to Amir, I succeeded in Calc and Physics and enjoyed both along the way."
+            },
+            {
+                name: "Lena S.",
+                role: "Calculus & Physics Student",
+                quote: "Amir made Physics and Calc fun and approachable. I wouldn’t have passed without him."
+            },
+            {
+                name: "Omar L.",
+                role: "Former Student",
+                quote: "Amir’s mix of humor and skill made every session a blast."
+            },
+            {
+                name: "Caleb G.",
+                role: "Physics Student",
+                quote: "Amir helped me understand physics when I needed it most."
+            },
+            {
+                name: "Isaac N.",
+                role: "Physics Student",
+                quote: "Amir’s tutoring kept me from failing physics. I’m incredibly thankful."
+            },
+            {
+                name: "Nina T.",
+                role: "Math & Physics Student",
+                quote: "Amir brought energy and laughter into every math and physics session."
+            },
+            {
+                name: "Clair F.",
+                role: "Physics Student",
+                quote: "Amir made physics click for me. I was never bored, only grateful."
+            },
+            {
+                name: "Lydia D.",
+                role: "Calculus & Physics Student",
+                quote: "Amir explains complex ideas simply and effectively. I always left understanding more."
             }
         ]
     },
