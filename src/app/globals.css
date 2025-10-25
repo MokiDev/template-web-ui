@@ -192,3 +192,8 @@ body {
     max-height: 500px;
     transition: max-height 0.3s ease-in;
 }
+
+iframe[src*="schedule"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
